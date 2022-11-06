@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-03 Counter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body{
+            margin: 0;padding: 0;
+            min-width: 100%;overflow-y: hidden;
+            font-family: sans-serif;
+        }
+        .container
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 15em;
+        }
+        h4,p{
+            text-transform: capitalize;
+            font-size: 4em;
+            color: darkblue;
+        }
+        .btn-container
+        {
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+
+        }
+        .btn-container>button
+        {
+            padding: 5px 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 15px;
+            background: none;
+            border-radius: 1em;
+        }
+        button:hover
+        {
+            background-color: black;
+            color: white;
+            transition: all 0.3s ease-out;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h4 >counter</h4>
+        <p ><span id="counter">0</span></p>
+        <div class="btn-container">
+            <button id="dec">decrease</button>
+            <button id="reset">reset</button>
+            <button id="inc">increase</button>
+        </div>
+    </div>
+    
+
+
+</body>
+<script>
+    
+    let counter=0;
+    let appendCounter=document.getElementById('counter')
+     let decrease=document.getElementById('dec')
+     let reset=document.getElementById('reset');
+     let increase=document.getElementById('inc');
+
+     increase.onclick=function()
+     {
+       counter++;
+        if(counter>0)
+        {
+            appendCounter.innerHTML=counter;
+            appendCounter.style.color='green'
+        }
+        
+
+     }
+     reset.onclick=function()
+     {
+        counter="0";
+        appendCounter.innerHTML=counter;
+        appendCounter.style='darkblue';
+     }
+
+     decrease.onclick=function()
+     {
+        counter--;
+        appendCounter.innerHTML=counter
+        
+        if(counter <0)
+        {
+            appendCounter.style.color='red'
+        }
+        
+     }
+
+
+</script>
+</html>
